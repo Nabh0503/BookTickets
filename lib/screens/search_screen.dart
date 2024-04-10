@@ -2,6 +2,7 @@ import 'package:bookingtickets/utils/app_layout.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:bookingtickets/widgets/double_text_widget.dart';
 import 'package:bookingtickets/widgets/icon_text_widget.dart';
+import 'package:bookingtickets/widgets/ticket_tabs.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -19,39 +20,7 @@ class SearchScreen extends StatelessWidget {
           const Gap(40),
           Text("What are\nyou looking for?",style: Styles.headLineStyle1.copyWith(fontSize: 35),),
           const Gap(20),
-          FittedBox(
-            child: Container(
-              padding: const EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(50),
-                  color: const Color(0xFFF4F6FD)
-              ),
-              child: Row(
-                children: [
-                  //Airline Tickets
-                  Container(
-                    width: size.width*.9,
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(left: Radius.circular(50)),
-                        color: Colors.white
-                    ),
-                    child: Center(child: Text("Bus Tickets",style: Styles.headLineStyle5)),
-                  ),
-                  //Hotels
-                  Container(
-                    width: size.width*.9,
-                    padding: const EdgeInsets.symmetric(vertical: 20),
-                    decoration: const BoxDecoration(
-                        borderRadius: BorderRadius.horizontal(right: Radius.circular(50)),
-                        color: Colors.transparent
-                    ),
-                    child: Center(child: Text("Hotels",style: Styles.headLineStyle5,)),
-                  )
-                ],
-              ),
-            ) ,
-          ),
+          const AppTicketTabs(firstTab: "Bus Tickets",secondTab: "Hotels",),
           const Gap(20),
           const AppIconText(icon: Icons.bus_alert_outlined, text: "Departure"),
           const Gap(15),

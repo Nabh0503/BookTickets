@@ -6,7 +6,8 @@ import 'package:gap/gap.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String,dynamic> ticket;
-  const TicketView({super.key,required this.ticket});
+  final bool? isColor;
+  const TicketView({super.key,required this.ticket, this.isColor});
 
   @override
   Widget build(BuildContext context) {
@@ -20,8 +21,8 @@ class TicketView extends StatelessWidget {
           children: [
             //showing the blue card of the ticket
             Container(
-              decoration: const BoxDecoration(
-                color: Color(0xFF526799),
+              decoration: BoxDecoration(
+                color: isColor==null? Color(0xFF526799):Colors.white,
                 borderRadius: BorderRadius.only(topLeft: Radius.circular(21),
                     topRight: Radius.circular(21)),
               ),
@@ -30,11 +31,12 @@ class TicketView extends StatelessWidget {
                 children: [
                   Row(
                     children: [
-                      Text(ticket['from']['code'],style: Styles.headLineStyle3.copyWith(color: Colors.white),),
+                      Text(ticket['from']['code'],
+                        style: isColor==null? Styles.headLineStyle3.copyWith(color: Colors.white):Styles.headLineStyle3),
 
                       Expanded(child: Container()),
 
-                      const ThickContainer(),
+                      const ThickContainer(isColor: true,),
 
                       Expanded(child: Stack(
                         children: [
@@ -46,19 +48,20 @@ class TicketView extends StatelessWidget {
                                 direction:Axis.horizontal,
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 mainAxisSize: MainAxisSize.max,
-                                children: List.generate((constraints.constrainWidth()/7).floor(), (index) => const SizedBox(
-                                  width:3,height: 1,child: DecoratedBox(decoration: BoxDecoration(color: Colors.white),
+                                children: List.generate((constraints.constrainWidth()/7).floor(), (index) => SizedBox(
+                                  width:3,height: 1,child: DecoratedBox(decoration: BoxDecoration(
+                                    color: isColor==null? Colors.white:Colors.grey.shade300),
                                 ),),
                                 )
                               );
                             },
                           )
                         ),
-                          const Center(child: Icon(Icons.directions_bus,color: Colors.white,)),
+                          Center(child: Icon(Icons.directions_bus,color:isColor==null? Colors.white:Color(0xFFBACCF7),)),
                         ],
                       )),
 
-                      const ThickContainer(),
+                      const ThickContainer(isColor: true,),
                       Expanded(child: Container()),
 
                       Text(ticket['to']['code'],style: Styles.headLineStyle3.copyWith(color: Colors.white),)
