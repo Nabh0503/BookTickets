@@ -1,5 +1,5 @@
+import 'package:bookingtickets/screens/search_screen.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'home_screen.dart';
@@ -14,10 +14,10 @@ class BottomBar extends StatefulWidget {
 class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List<Widget>_widgetOptions = <Widget>[
-    HomeScreen(),
-    Text('Search'),
-    Text('Tickets'),
-    Text('Profile'),
+    const HomeScreen(),
+    const SearchScreen(),
+    const Text('Tickets'),
+    const Text('Profile'),
   ];
 
   void _onItemTapped(int index) {

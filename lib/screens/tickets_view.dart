@@ -3,7 +3,6 @@ import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:bookingtickets/widgets/thick_container.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:get/get.dart';
 
 class TicketView extends StatelessWidget {
   final Map<String,dynamic> ticket;
