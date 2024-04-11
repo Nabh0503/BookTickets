@@ -1,4 +1,5 @@
 import 'package:bookingtickets/screens/bottom_bar.dart';
+import 'package:bookingtickets/screens/splash_screen.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         primaryColor: primary,
         useMaterial3: true,
       ),
-      home: const BottomBar(),
+      home: SplashScreen(),
     );
   }
 }
