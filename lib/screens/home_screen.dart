@@ -1,4 +1,5 @@
 import 'package:bookingtickets/screens/hotel_screen.dart';
+import 'package:bookingtickets/screens/search_screen.dart';
 import 'package:bookingtickets/screens/tickets_view.dart';
 import 'package:bookingtickets/utils/app_info_list.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
@@ -51,20 +52,26 @@ class HomeScreen extends StatelessWidget {
                   ]
                 ),
                 const Gap(25),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 12),
-                  child: Row(
-                    children: [
-                      const Icon(FluentSystemIcons.ic_fluent_search_regular, color:Color(0xFFBFC205)),
-                      Text(
-                          "Search",
-                        style: Styles.headLineStyle4,
-                      ),
-                    ]
+                InkWell(
+                  onTap: (){
+                    Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (BuildContext context) => const SearchScreen()));
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 12),
+                    child: Row(
+                      children: [
+                        const Icon(FluentSystemIcons.ic_fluent_search_regular, color:Color(0xFFBFC205)),
+                        Text(
+                            "Search",
+                          style: Styles.headLineStyle4,
+                        ),
+                      ]
+                    ),
                   ),
                 ),
                 const Gap(40),

@@ -16,4 +16,6 @@ class Styles{
   static TextStyle headLineStyle5= TextStyle(fontSize: 28, color: Colors.black,fontWeight:FontWeight.w500);
   static TextStyle headLineStyle3= TextStyle(fontSize: 17,fontWeight:FontWeight.w500);
   static TextStyle headLineStyle4= TextStyle(fontSize: 14, color: Colors.grey.shade500,fontWeight: FontWeight.w500);
+  static TextStyle headLineStyle6= TextStyle(fontSize: 13, color: Colors.grey.shade500,fontWeight: FontWeight.w500);
+
 }
