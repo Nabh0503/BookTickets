@@ -1,4 +1,4 @@
-import 'package:bookingtickets/screens/tickets_view.dart';
+import 'package:bookingtickets/screens/Ticket/tickets_view.dart';
 import 'package:bookingtickets/utils/app_info_list.dart';
 import 'package:bookingtickets/utils/app_layout.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
@@ -15,7 +15,7 @@ class TicketScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size=AppLayout.getSize(context);
+    AppLayout.getSize(context);
     return WillPopScope(
       onWillPop: () async {
         Navigator.of(context).pushReplacement(
@@ -29,23 +29,23 @@ class TicketScreen extends StatelessWidget {
             ListView(
               padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 20),
             children: [
-              const Gap(40),
+              const Gap(50),
               Text("Tickets",style: Styles.headLineStyle1,),
-              const Gap(20),
+              const Gap(25),
               const AppTicketTabs(firstTab: "Upcoming",secondTab: "Previous",),
-              const Gap(20),
+              const Gap(25),
               Container(
-                padding: EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(left: 15),
                 child: TicketView(ticket:ticketList[0],isColor: true,),
               ),
-              SizedBox(height: 1,),
+              const SizedBox(height: 1,),
               Container(
                 margin: const EdgeInsets.only(left:25,right: 10),
-                padding: EdgeInsets.symmetric(horizontal: 15,vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 15,vertical: 20),
                 color: Colors.white,
                 child: Column(
                   children:[
-                    Row(
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppColumnLayout(
@@ -58,25 +58,25 @@ class TicketScreen extends StatelessWidget {
                           alignment: CrossAxisAlignment.end,isColor: false,)
                       ],
                     ),
-                    const Gap(20),
+                    const Gap(25),
                     const AppLayoutBuilderWidget(sections: 15,isColor: false,width: 5,),
-                    const Gap(20),
-                    Row(
+                    const Gap(25),
+                    const Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         AppColumnLayout(
                           firstText:'32145 325789' ,
                           secondText: 'No of E-ticket',
-                          alignment: CrossAxisAlignment.start,isColor: false,),
+                          alignment: CrossAxisAlignment.start,isColor: true,),
                         AppColumnLayout(
                           firstText:'B2SG28' ,
                           secondText: 'Booking Code',
                           alignment: CrossAxisAlignment.end,isColor: false,)
                       ],
                     ),
-                    const Gap(20),
+                    const Gap(25),
                     const AppLayoutBuilderWidget(sections: 15,isColor: false,width: 5,),
-                    const Gap(20),
+                    const Gap(25),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -90,28 +90,28 @@ class TicketScreen extends StatelessWidget {
                                 Text("*** 7890",style: Styles.headLineStyle3,),
                               ]
                             ),
-                            Gap(5),
+                            const Gap(5),
                             Text("Payment method",style: Styles.headLineStyle4,),
                           ],
                         ),
-                        AppColumnLayout(firstText: '\$240.00', secondText: 'Price', alignment: CrossAxisAlignment.end,isColor: false,)
+                        const AppColumnLayout(firstText: '\$240.00', secondText: 'Price', alignment: CrossAxisAlignment.end,isColor: false,)
                       ],
                     ),
                     const SizedBox(height: 1,),
                   ]
                 ),
               ),
-              SizedBox(height: 1,),
+              const SizedBox(height: 1,),
               Container(
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.only(
                       bottomLeft: Radius.circular(21),
                       bottomRight: Radius.circular(21))
                   ,
                 ),
-                margin: EdgeInsets.only(left: 25,right: 10),
-                padding: EdgeInsets.only(top: 20,bottom: 20),
+                margin: const EdgeInsets.only(left: 25,right: 10),
+                padding: const EdgeInsets.only(top: 20,bottom: 20),
                 //BarCode
                 child: Container(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
@@ -121,7 +121,7 @@ class TicketScreen extends StatelessWidget {
                     child: BarcodeWidget(
                         data: 'https://github.com/Nabh0503/BookTickets',
                         barcode: Barcode.code128(),
-                        color: Styles.textColor,
+                        color: Styles.textColor1,
                         drawText: false,
                       height: 80,
                       width: double.infinity,
@@ -131,38 +131,38 @@ class TicketScreen extends StatelessWidget {
               ),
               const Gap(20),
               Container(
-                padding: EdgeInsets.only(left: 15),
+                padding: const EdgeInsets.only(left: 15),
                 child: TicketView(ticket:ticketList[0],),
               ),
             ],
           ),
             Positioned(
-              left: 23,
+              left: 20,
               top:295,
               child: Container(
-                padding: EdgeInsets.all(3),
+                padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: Styles.textColor,width: 2),
+                  border: Border.all(color: Styles.primaryColor1,width: 3),
                 ),
                 child: CircleAvatar(
                   maxRadius: 6,
-                  backgroundColor: Styles.textColor,
+                  backgroundColor: Styles.primaryColor1,
                 ),
               ),
             ),
             Positioned(
-              right: 9,
+              right: 6,
               top:295,
               child: Container(
-                padding: EdgeInsets.all(3),
+                padding: const EdgeInsets.all(5),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
-                  border: Border.all(color: Styles.textColor,width: 2),
+                  border: Border.all(color: Styles.primaryColor1,width: 3),
                 ),
                 child: CircleAvatar(
                   maxRadius: 6,
-                  backgroundColor: Styles.textColor,
+                  backgroundColor: Styles.primaryColor1,
                 ),
               ),
             ),

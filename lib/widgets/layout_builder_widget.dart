@@ -16,7 +16,7 @@ class AppLayoutBuilderWidget extends StatelessWidget {
             mainAxisSize: MainAxisSize.max,
             children: List.generate((constraints.constrainWidth()/sections).floor(), (index) => SizedBox(
               width:3,height: 1,child: DecoratedBox(decoration: BoxDecoration(
-                color: isColor==null? Colors.blueGrey:Colors.grey.shade400),
+                color: isColor==null? Colors.black87:Colors.grey.shade400),
             ),),
             )
         );

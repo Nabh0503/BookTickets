@@ -10,7 +10,7 @@ class ThickContainer extends StatelessWidget {
       padding: const EdgeInsets.all(3.0),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        border: Border.all(width: 2.5,color: isColor==null? Colors.white: Colors.blueAccent),
+        border: Border.all(width: 2.5,color: isColor==null? Colors.black87: const Color(0xFF13B463)),
       )
     );
   }

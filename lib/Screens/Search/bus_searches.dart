@@ -1,12 +1,10 @@
 import 'package:bookingtickets/screens/bottom_bar.dart';
-import 'package:bookingtickets/screens/search_screen.dart';
+import 'package:bookingtickets/screens/Search/search_screen.dart';
 import 'package:bookingtickets/utils/app_info_list.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:bookingtickets/screens/bus_ticket_view.dart';
-import 'package:bookingtickets/screens/bus_seating.dart';
-import 'package:bookingtickets/screens/bus_seating_1.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bookingtickets/screens/Search/bus_ticket_view.dart';
+import 'package:bookingtickets/screens/Search/bus_seating_1.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -26,8 +24,8 @@ class BusSearch extends StatelessWidget {
           backgroundColor: Styles.bgColor,
           appBar: AppBar
           (
-          backgroundColor: Styles.secondaryColor,
-          shadowColor: Colors.grey,
+          backgroundColor: Styles.primaryColor1,
+          shadowColor: Colors.white,
           leading: BackButton(
           onPressed: () {
           Navigator.of(context).pushReplacement(
@@ -36,10 +34,10 @@ class BusSearch extends StatelessWidget {
         ),
           actions: <Widget>[
             IconButton(
-              padding: EdgeInsets.only(right: 15,top: 5),
+              padding: const EdgeInsets.only(right: 15,top: 5),
               icon: CircleAvatar(
-                  child:  Icon(FluentSystemIcons.ic_fluent_home_regular,size: 20,color: Styles.bgColor,),
-                backgroundColor: Styles.secondaryColor,
+                  backgroundColor: Styles.primaryColor1,
+                  child:  Icon(FluentSystemIcons.ic_fluent_home_regular,size: 20,color: Styles.textColor,),
 
               ),
               onPressed: () {
@@ -62,13 +60,6 @@ class BusSearch extends StatelessWidget {
             // ),
             Builder(
               builder: (context) {
-                final List<List<Seat>> seats = List.generate(
-                 40,// number of rows
-                      (i) => List.generate(
-                    20, // number of seats per row
-                        (j) => Seat(status: SeatStatus.available),
-                  ),
-                );
                 return InkWell(
                   onTap: () {
                     Navigator.of(context).pushReplacement(
@@ -78,7 +69,7 @@ class BusSearch extends StatelessWidget {
                   child: ListView(
                     shrinkWrap: true,
                     padding: const EdgeInsets.symmetric(horizontal:15),
-                    physics: NeverScrollableScrollPhysics(),
+                    physics: const NeverScrollableScrollPhysics(),
                     children: busTicket.map((busticket) => BusTicket(busticket: busticket,isColor: false,)).toList(),
                   ),
                 );

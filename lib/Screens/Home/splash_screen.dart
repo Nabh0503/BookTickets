@@ -1,5 +1,5 @@
 import 'package:bookingtickets/screens/bottom_bar.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -40,9 +40,9 @@ with SingleTickerProviderStateMixin{
         width: double.infinity,
         decoration: BoxDecoration(
           gradient: LinearGradient(
-            colors: const[
-              Colors.blue,
-              Color(0xFF133c8b),
+            colors: [
+              Styles.primaryColor1,
+              Styles.primaryColor1,
             ],
             begin: Alignment.topCenter,
             end: Alignment.bottomLeft,
@@ -51,14 +51,14 @@ with SingleTickerProviderStateMixin{
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset("images/icon.png"),
-            SizedBox(height: 5),
-            Text("Bus Booking",
-              style: TextStyle(
-                fontStyle: FontStyle.italic,
-                  fontSize: 30, color: Colors.white
-              ),
-            ),
+            Image.asset("images/logo.png"),
+           // SizedBox(height: 5),
+            // Text("Bus Booking",
+            //   style: TextStyle(
+            //     fontStyle: FontStyle.italic,
+            //       fontSize: 30, color: Colors.white
+            //   ),
+            // ),
           ],
         )
       )

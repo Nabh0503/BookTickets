@@ -3,7 +3,6 @@ import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:bookingtickets/widgets/column_layout.dart';
 import 'package:bookingtickets/widgets/layout_builder_widget.dart';
 import 'package:bookingtickets/widgets/thick_container.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:get/get_utils/src/platform/platform.dart';
@@ -22,14 +21,14 @@ class BusTicket extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
           // color: isColor==null? Color(0xFF526799):Colors.white,
-          borderRadius: BorderRadius.only(topLeft: Radius.circular(21),
+          borderRadius: const BorderRadius.only(topLeft: Radius.circular(21),
               topRight: Radius.circular(21)),
           boxShadow: [
             BoxShadow(
-              color: Colors.grey.shade500.withOpacity(0.3),
-              spreadRadius: 3,
-              blurRadius: 10,
-              offset: Offset(2, 4), // changes position of shadow
+                color: Styles.primaryColor1,
+                blurRadius: 20,
+                spreadRadius: 1,
+                offset: const Offset(0, 0) // changes position of shadow
             ),
           ],
         ),
@@ -39,20 +38,20 @@ class BusTicket extends StatelessWidget {
             //showing the blue card of the ticket
             Container(
                 decoration: BoxDecoration(
-                  color: isColor==null? Color(0xFF526799):Colors.white,
-                  borderRadius: BorderRadius.only(topLeft: Radius.circular(21),
+                  color: isColor==null? const Color(0xFF526799):Colors.white,
+                  borderRadius: const BorderRadius.only(topLeft: Radius.circular(21),
                       topRight: Radius.circular(21)),
                 ),
-                padding: const EdgeInsets.all(16),
+                padding: const EdgeInsets.all(20),
                 child: Column(
                   children: [
                     Row(
                       children: [
                         Text(busticket['from']['dp_time'],
                             style: isColor==null? Styles.headLineStyle3.copyWith(color: Colors.white):Styles.headLineStyle3),
-                        const Gap(3),
-                        Icon(Icons.remove, color: isColor==null? Colors.white:Color(0xFFBACCF7)), // Dash icon
-                        const Gap(3),
+                        const Gap(1),
+                        Icon(Icons.remove, color: isColor==null? Colors.white:const Color(0xFFBACCF7)), // Dash icon
+                        const Gap(1),
                         Text(busticket['from']['arr_time'],
                           style: isColor==null?Styles.headLineStyle3.copyWith(color: Colors.white):Styles.headLineStyle3,),
                         Expanded(child: Container()),
@@ -60,11 +59,11 @@ class BusTicket extends StatelessWidget {
                         const ThickContainer(isColor: true,),
                         Expanded(child: Stack(
                           children: [
-                            SizedBox(
+                            const SizedBox(
                                 height: 25,
                                 child: AppLayoutBuilderWidget(sections: 5,)
                             ),
-                            Center(child: Icon(Icons.directions_bus,color:isColor==null? Colors.black:Colors.blueAccent,)),
+                            Center(child: Icon(Icons.directions_bus,color:isColor==null? Colors.black:const Color(0xFF13B463),)),
                           ],
                         )),
                         const ThickContainer(isColor: true),
@@ -75,7 +74,7 @@ class BusTicket extends StatelessWidget {
                           Text(busticket['seats']['time'],
                               style: isColor==null? Styles.headLineStyle3.copyWith(color: Colors.white):Styles.headLineStyle6),
                           const Gap(2),
-                          Icon(Icons.circle,size: 7, color: isColor==null? Colors.white:Colors.blueAccent), // Dash icon
+                          Icon(Icons.circle,size: 8, color: isColor==null? Colors.white:const Color(0xFF13B463)), // Dash icon
                           const Gap(2),
                           Text(busticket['seats']['total'],
                             style: isColor==null?Styles.headLineStyle3.copyWith(color: Colors.white):Styles.headLineStyle6,),
@@ -94,7 +93,7 @@ class BusTicket extends StatelessWidget {
                       child: DecoratedBox(
                           decoration:BoxDecoration(
                               color: isColor==null? Colors.grey.shade300:Colors.white,
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   topRight: Radius.circular(10),
                                   bottomRight: Radius.circular(10)
                               )
@@ -126,7 +125,7 @@ class BusTicket extends StatelessWidget {
                       child: DecoratedBox(
                           decoration:BoxDecoration(
                               color: isColor==null? Colors.grey.shade200:Colors.white,
-                              borderRadius: BorderRadius.only(
+                              borderRadius: const BorderRadius.only(
                                   topLeft: Radius.circular(10),
                                   bottomLeft: Radius.circular(10)
                               )

@@ -1,11 +1,10 @@
-import 'package:bookingtickets/screens/hotel_screen.dart';
-import 'package:bookingtickets/screens/search_screen.dart';
-import 'package:bookingtickets/screens/tickets_view.dart';
+import 'package:bookingtickets/screens/Home/hotel_screen.dart';
+import 'package:bookingtickets/screens/Search/search_screen.dart';
+import 'package:bookingtickets/screens/Ticket/tickets_view.dart';
 import 'package:bookingtickets/utils/app_info_list.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:bookingtickets/widgets/double_text_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -22,7 +21,7 @@ class HomeScreen extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal:20),
             child: Column(
               children:[
-                const Gap(40),
+                const Gap(50),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children:[
@@ -30,7 +29,7 @@ class HomeScreen extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Good Morning",style: Styles.headLineStyle3,
+                          "Good Morning",style: Styles.headLineStyle3.copyWith(color: Colors.white),
                         ),
                         const Gap(5),
                         Text(
@@ -44,7 +43,7 @@ class HomeScreen extends StatelessWidget {
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.circular(10),
                         image: const DecorationImage(
-                          image: AssetImage('images/img1.jpeg'),
+                          image: AssetImage('images/logo.png'),
                           fit: BoxFit.fitHeight,
                         ),
                       ),
@@ -74,25 +73,25 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                 ),
-                const Gap(40),
-                const AppDoubleTextWidget(bigText: "Upcoming Buses", smallText: "View All")
+                const Gap(50),
+                const AppDoubleTextWidget(bigText: "Upcoming Buses", smallText: "View All", myScreen: SearchScreen()),
               ]
             ),
           ),
-          const Gap(15),
+          const Gap(25),
            SingleChildScrollView(
             scrollDirection:Axis.horizontal,
             padding: const EdgeInsets.only(right: 20),
             child: Row(
-              children: ticketList.map((singleticket) => TicketView(ticket: singleticket)).toList()
+              children: ticketList.take(2).map((singleticket) => TicketView(ticket: singleticket)).toList()
             ),
           ),
-          const Gap(15),
+          const Gap(50),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: const AppDoubleTextWidget(bigText: "Hotels", smallText: "View All"),
+            child: const AppDoubleTextWidget(bigText: "Hotels", smallText: "View All", myScreen: SearchScreen()),
           ),
-          const Gap(15),
+          const Gap(25),
           SingleChildScrollView(
               scrollDirection:Axis.horizontal,
               padding: const EdgeInsets.only(left:20,right: 20),
