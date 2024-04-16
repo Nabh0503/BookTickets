@@ -48,6 +48,135 @@ List<Map<String, dynamic>> ticketList = [
     'departure_time':"09:00 AM",
     "number":45
   },
+
+  {
+    'from': {
+      'code': "MUM",
+      'name': "Mumbai"
+    },
+    'to': {
+      'code': "DEL",
+      'name': "Delhi"
+    },
+    'flying_time': '2H 30M',
+    'date': "10 JUN",
+    'departure_time': "12:30 PM",
+    "number": 45
+  },
+
+  {
+    'from': {
+      'code': "BLR",
+      'name': "Bangalore"
+    },
+    'to': {
+      'code': "HYD",
+      'name': "Hyderabad"
+    },
+    'flying_time': '1H 15M',
+    'date': "5 APR",
+    'departure_time': "10:45 AM",
+    "number": 12
+  },
+  {
+    'from': {
+      'code': "CCU",
+      'name': "Kolkata"
+    },
+    'to': {
+      'code': "BOM",
+      'name': "Mumbai"
+    },
+    'flying_time': '2H 45M',
+    'date': "15 JUL",
+    'departure_time': "03:20 PM",
+    "number": 78
+  },
+  {
+    'from': {
+      'code': "DEL",
+      'name': "Delhi"
+    },
+    'to': {
+      'code': "CHE",
+      'name': "Chennai"
+    },
+    'flying_time': '3H 10M',
+    'date': "20 OCT",
+    'departure_time': "07:15 AM",
+    "number": 34
+  },
+  {
+    'from': {
+      'code': "AMD",
+      'name': "Ahmedabad"
+    },
+    'to': {
+      'code': "PNQ",
+      'name': "Pune"
+    },
+    'flying_time': '1H 20M',
+    'date': "12 FEB",
+    'departure_time': "11:30 AM",
+    "number": 56
+  },
+
+  {
+    'from': {
+      'code': "GOI",
+      'name': "Goa"
+    },
+    'to': {
+      'code': "IXB",
+      'name': "Bagdogra"
+    },
+    'flying_time': '2H 55M',
+    'date': "8 MAR",
+    'departure_time': "09:45 AM",
+    "number": 89
+  },
+  {
+    'from': {
+      'code': "BOM",
+      'name': "Mumbai"
+    },
+    'to': {
+      'code': "IXR",
+      'name': "Ranchi"
+    },
+    'flying_time': '2H 40M',
+    'date': "25 SEP",
+    'departure_time': "06:10 PM",
+    "number": 67
+  },
+  {
+    'from': {
+      'code': "BLR",
+      'name': "Bangalore"
+    },
+    'to': {
+      'code': "JAI",
+      'name': "Jaipur"
+    },
+    'flying_time': '2H 15M',
+    'date': "18 NOV",
+    'departure_time': "04:30 PM",
+    "number": 90
+  },
+  {
+    'from': {
+      'code': "DEL",
+      'name': "Delhi"
+    },
+    'to': {
+      'code': "COK",
+      'name': "Kochi"
+    },
+    'flying_time': '3H 30M',
+    'date': "3 AUG",
+    'departure_time': "01:50 PM",
+    "number": 23
+  }
 ];
 
 List<Map<String,dynamic>> busTicket=[
@@ -305,3 +434,12 @@ List<Map<String,dynamic>> busTicket=[
   }
 
 ];
+
+List<String> cities =    [ "New Delhi",    "Mumbai",    "Kolkata",    "Chennai",    "Bangalore",    "Hyderabad",    "Pune",
+    "Ahmedabad",    "Jaipur",    "Surat",    "Lucknow",    "Kanpur",    "Nagpur",    "Indore",    "Thane",    "Bhopal",    "Visakhapatnam",
+    "Pimpri-Chinchwad",    "Patna",    "Vadodara",    "Ghaziabad",    "Ludhiana",    "Agra",    "Nashik",    "Faridabad",    "Meerut",
+    "Rajkot",    "Kalyan-Dombivli",    "Vasai-Virar",    "Varanasi",    "Srinagar",    "Aurangabad",    "Dhanbad",    "Amritsar",    "Navi Mumbai",
+    "Allahabad",    "Ranchi",   "Howrah",    "Jabalpur",    "Gwalior",    "Vijayawada",    "Jodhpur",    "Madurai",    "Raipur",
+    "Kota",    "Guwahati",    "Chandigarh",    "Solapur",    "Hubballi-Dharwad",    "Bareilly",    "Moradabad"
+ ]; // Add your cities here
+String? selectedCity;

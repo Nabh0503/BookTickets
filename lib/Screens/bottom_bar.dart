@@ -17,7 +17,7 @@ class _BottomBarState extends State<BottomBar> {
   int _selectedIndex = 0;
   static final List<Widget>_widgetOptions = <Widget>[
     const HomeScreen(),
-    const SearchScreen(),
+    SearchScreen(),
     const TicketScreen(),
     const ProfileScreen(),
   ];

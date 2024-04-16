@@ -1,5 +1,6 @@
 import 'package:bookingtickets/screens/bottom_bar.dart';
 import 'package:bookingtickets/screens/Search/bus_searches.dart';
+import 'package:bookingtickets/utils/app_info_list.dart';
 import 'package:bookingtickets/utils/app_layout.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:bookingtickets/widgets/double_text_widget.dart';
@@ -9,11 +10,14 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
+  SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+
     final size =AppLayout.getSize(context);
+    String? departureCity;
+    String? arrivalCity;
     return WillPopScope(
       onWillPop: () async {
         Navigator.of(context).pushReplacement(
@@ -30,9 +34,25 @@ class SearchScreen extends StatelessWidget {
             const Gap(25),
             const AppTicketTabs(firstTab: "Bus Tickets",secondTab: "Hotels",),
             const Gap(35),
-            const AppIconText(icon: Icons.bus_alert_outlined, text: "Departure"),
+            AppIconText(icon: Icons.bus_alert_outlined, text: "Departure",items: cities,selectedItem: selectedCity,
+              onChanged: (newValue) {
+                departureCity = newValue;
+              },),
             const Gap(10),
-            const AppIconText(icon: Icons.bus_alert_sharp, text: "Arrival"),
+            AppIconText(
+              icon: Icons.bus_alert_sharp,
+              text: "Arrival",items: cities,
+              selectedItem: selectedCity,  onChanged: (newValue) {
+              if (newValue == departureCity) {
+                // Show an error message to the user
+                ScaffoldMessenger.of(context).showSnackBar(
+                    const SnackBar(content: Text('Departure and arrival cities cannot be the same.'))
+                );
+              } else {
+                // Update the selected city
+                arrivalCity = newValue;
+              }
+            }),
             const Gap(35),
             Container(
               padding: const EdgeInsets.symmetric(horizontal: 18,vertical: 15),

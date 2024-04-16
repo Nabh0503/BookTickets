@@ -1,5 +1,4 @@
 import 'package:bookingtickets/screens/Search/bus_searches.dart';
-import 'package:bookingtickets/screens/Search/bus_ticket_view.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:flutter/material.dart';
 

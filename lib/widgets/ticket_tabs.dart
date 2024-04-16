@@ -25,7 +25,7 @@ class AppTicketTabs extends StatelessWidget {
               padding: const EdgeInsets.symmetric(vertical: 20),
               decoration: const BoxDecoration(
                   borderRadius: BorderRadius.horizontal(left: Radius.circular(50)),
-                  color: const Color(0xFFffffff),
+                  color: Color(0xFFffffff),
               ),
               child: Center(child: Text(firstTab,style: Styles.headLineStyle5)),
             ),

@@ -5,6 +5,7 @@ import 'package:bookingtickets/utils/app_info_list.dart';
 import 'package:bookingtickets/utils/app_styles.dart';
 import 'package:bookingtickets/widgets/double_text_widget.dart';
 import 'package:fluentui_icons/fluentui_icons.dart';
+import 'package:bookingtickets/Screens/Home/upcoming_buses.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -54,7 +55,7 @@ class HomeScreen extends StatelessWidget {
                 InkWell(
                   onTap: (){
                     Navigator.of(context).pushReplacement(
-                        MaterialPageRoute(builder: (BuildContext context) => const SearchScreen()));
+                        MaterialPageRoute(builder: (BuildContext context) => SearchScreen()));
                   },
                   child: Container(
                     decoration: BoxDecoration(
@@ -74,7 +75,7 @@ class HomeScreen extends StatelessWidget {
                   ),
                 ),
                 const Gap(50),
-                const AppDoubleTextWidget(bigText: "Upcoming Buses", smallText: "View All", myScreen: SearchScreen()),
+                const AppDoubleTextWidget(bigText: "Upcoming Buses", smallText: "View All", myScreen: UpcomingBus()),
               ]
             ),
           ),
@@ -89,7 +90,7 @@ class HomeScreen extends StatelessWidget {
           const Gap(50),
           Container(
             padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: const AppDoubleTextWidget(bigText: "Hotels", smallText: "View All", myScreen: SearchScreen()),
+            child: const AppDoubleTextWidget(bigText: "Hotels", smallText: "View All", myScreen: UpcomingBus()),
           ),
           const Gap(25),
           SingleChildScrollView(

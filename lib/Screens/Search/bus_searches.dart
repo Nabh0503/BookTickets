@@ -16,7 +16,7 @@ class BusSearch extends StatelessWidget {
     return WillPopScope(
       onWillPop: () async {
         Navigator.of(context).pushReplacement(
-            MaterialPageRoute(builder: (BuildContext context) => const SearchScreen()));
+            MaterialPageRoute(builder: (BuildContext context) => SearchScreen()));
         return false; // Prevents the default behavior of going back to the previous screen
       },
 
@@ -29,7 +29,7 @@ class BusSearch extends StatelessWidget {
           leading: BackButton(
           onPressed: () {
           Navigator.of(context).pushReplacement(
-              MaterialPageRoute(builder: (BuildContext context) => const SearchScreen()));
+              MaterialPageRoute(builder: (BuildContext context) =>  SearchScreen()));
           },
         ),
           actions: <Widget>[
