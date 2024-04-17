@@ -64,12 +64,12 @@ class BusSeating extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Styles.bgColor,
         appBar: AppBar(
-          title: Text('Bus Seating Layout'),
+          title: const Text('Bus Seating Layout'),
         ),
         body: GridView.builder(
-          padding: EdgeInsets.all(18.0),
+          padding: const EdgeInsets.all(18.0),
           itemCount: seats.length,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 4,
             childAspectRatio: 1.35,
             mainAxisSpacing: 9.0,

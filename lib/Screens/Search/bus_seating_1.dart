@@ -26,7 +26,7 @@ class _ChooseSeatState extends State<ChooseSeat> {
     // third param is for naming value every seat //look line 38
     initSeatValueToList(listSeatLeft, countSeatLeft, "l");
     initSeatValueToList(listSeatRight, countSeatRight, "r");
-    setVisiblitySeat();
+    setVisibilitySeat();
     super.initState();
   }
 
@@ -49,7 +49,7 @@ class _ChooseSeatState extends State<ChooseSeat> {
     }
   }
 
-  setVisiblitySeat() {
+  setVisibilitySeat() {
     setState(() {
       listSeatLeft[0]["isVisible"] = true; // left column index 0
       listSeatRight[0]["isVisible"] = true; // right column index 1
@@ -200,7 +200,7 @@ class _ChooseSeatState extends State<ChooseSeat> {
                 ),
               ),
               const SizedBox(
-                height: 50,
+                height: 40,
               ),
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 10),
@@ -211,7 +211,7 @@ class _ChooseSeatState extends State<ChooseSeat> {
                   children: [
                     widgetSeat(listSeatLeft, false),
                     const SizedBox(
-                      width: 80,
+                      width: 110,
                     ),
                     const SizedBox(
                       width: 55,
@@ -235,7 +235,6 @@ class _ChooseSeatState extends State<ChooseSeat> {
       ),
     );
   }
-
   Widget widgetSeat(List dataSeat, bool isCenter) {
     return SizedBox(
       width: MediaQuery.of(context).size.width / 4,
@@ -244,9 +243,9 @@ class _ChooseSeatState extends State<ChooseSeat> {
         physics: const NeverScrollableScrollPhysics(),
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
           crossAxisCount: 2, // Set the cross axis count to 2 for 2*10 arrangement
-          childAspectRatio: 1.3, // Adjust this value as needed to maintain the aspect ratio of each child
-          mainAxisSpacing: 25.0,
-          crossAxisSpacing: 12.0,
+          childAspectRatio: 1.25, // Adjust this value as needed to maintain the aspect ratio of each child
+          mainAxisSpacing: 24.0,
+          crossAxisSpacing: 15.0,
         ),
         itemCount: dataSeat.length,
         itemBuilder: (BuildContext context, int index) {
@@ -260,15 +259,14 @@ class _ChooseSeatState extends State<ChooseSeat> {
                     });
                   }
                 },
-              child: Container(
-                margin: const EdgeInsets.only(right: 5,left: 20),
-                width: 50,
-                height: 50,
+              child: SizedBox(
+                width: null,
+                height: null,
                 child: Icon(
                   size: 50.0,
                   dataSeat[index]["isBooked"]
                       ? Icons.event_seat_rounded
-                      : (dataSeat[index]["isSelected"] ? Icons.event_seat_rounded : Icons.event_seat),
+                      : (dataSeat[index]["isSelected"] ? Icons.event_seat_rounded : Icons.event_seat_outlined),
                   color: dataSeat[index]["isBooked"]
                       ? const Color(0xFF13B463)
                       : (dataSeat[index]["isSelected"] ? Colors.blueAccent : Colors.white),

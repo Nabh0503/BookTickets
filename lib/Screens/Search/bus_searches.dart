@@ -1,3 +1,4 @@
+import 'package:bookingtickets/Screens/Search/bus_seating.dart';
 import 'package:bookingtickets/screens/bottom_bar.dart';
 import 'package:bookingtickets/screens/Search/search_screen.dart';
 import 'package:bookingtickets/utils/app_info_list.dart';
@@ -63,8 +64,8 @@ class BusSearch extends StatelessWidget {
                 return InkWell(
                   onTap: () {
                     Navigator.of(context).pushReplacement(
-                        //MaterialPageRoute(builder: (BuildContext context) => BusSeating(seats: seats)));
-                        MaterialPageRoute(builder: (BuildContext context) => ChooseSeat()));
+                       // MaterialPageRoute(builder: (BuildContext context) => BusSeating(seats: seats)));
+                        MaterialPageRoute(builder: (BuildContext context) => const ChooseSeat()));
                   },
                   child: ListView(
                     shrinkWrap: true,

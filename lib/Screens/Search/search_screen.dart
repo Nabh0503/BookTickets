@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class SearchScreen extends StatelessWidget {
-  SearchScreen({super.key});
+  const SearchScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
